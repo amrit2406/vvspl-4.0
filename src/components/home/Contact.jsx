@@ -24,33 +24,36 @@ const Contact = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} id="contact" className="relative w-full min-h-screen bg-[#050505] text-white flex items-center justify-center p-8">
-
+        <section
+            ref={sectionRef}
+            id="contact"
+            className="relative w-full min-h-screen bg-slate-50 dark:bg-[#050505] text-black dark:text-white transition-colors duration-300 flex items-center justify-center p-6 sm:p-8"
+        >
             {/* Background Map Overlay */}
-            <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png')] bg-cover bg-center grayscale" />
+            <div className="absolute inset-0 opacity-20 dark:opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png')] bg-cover bg-center grayscale pointer-events-none" />
 
-            <div className="z-10 w-full max-w-4xl bg-gradient-to-br from-neutral-900 to-black border border-[#222] p-8 md:p-16 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-12">
+            <div className="z-10 w-full max-w-4xl bg-white dark:bg-black/40 backdrop-blur-md border border-slate-200 dark:border-[#222] p-8 md:p-16 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-12">
 
                 <div className="w-full md:w-1/2">
-                    <h2 className="text-[#0070F0] text-sm font-mono mb-4">TERMINAL POINT</h2>
-                    <h1 className="text-4xl font-bold mb-6">Start Your Journey</h1>
-                    <p className="text-neutral-400 mb-8 leading-relaxed">
+                    <h2 className="text-[#0070F0] text-sm font-mono mb-4 tracking-widest uppercase font-bold">TERMINAL POINT</h2>
+                    <h1 className="text-4xl font-bold mb-6 tracking-tight">Start Your Journey</h1>
+                    <p className="text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
                         Ready to accelerate your business? Our team is standing by to engineer your digital transformation.
                     </p>
 
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-[#0070F0]/10 flex items-center justify-center rounded text-[#0070F0]">📍</div>
+                    <div className="space-y-6">
+                        <div className="flex items-center gap-4 group">
+                            <div className="w-12 h-12 bg-[#0070F0]/10 flex items-center justify-center rounded-lg text-[#0070F0] text-xl group-hover:scale-110 transition-transform">📍</div>
                             <div>
-                                <h3 className="font-bold text-sm">Headquarters</h3>
-                                <p className="text-neutral-500 text-sm">123 Tech Park, Innovation City</p>
+                                <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Headquarters</h3>
+                                <p className="text-neutral-500 dark:text-neutral-400 text-sm">123 Tech Park, Innovation City</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-[#0070F0]/10 flex items-center justify-center rounded text-[#0070F0]">📧</div>
+                        <div className="flex items-center gap-4 group">
+                            <div className="w-12 h-12 bg-[#0070F0]/10 flex items-center justify-center rounded-lg text-[#0070F0] text-xl group-hover:scale-110 transition-transform">📧</div>
                             <div>
-                                <h3 className="font-bold text-sm">Email Us</h3>
-                                <p className="text-neutral-500 text-sm">contact@vvspl.com</p>
+                                <h3 className="font-bold text-sm text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Email Us</h3>
+                                <p className="text-neutral-500 dark:text-neutral-400 text-sm">contact@vvspl.com</p>
                             </div>
                         </div>
                     </div>
@@ -58,19 +61,29 @@ const Contact = () => {
 
                 <div ref={formRef} className="w-full md:w-1/2">
                     <form className="space-y-4">
-                        <input type="text" placeholder="Name" className="w-full bg-[#111] border border-[#333] p-4 rounded focus:border-[#0070F0] outline-none transition-colors" />
-                        <input type="email" placeholder="Email" className="w-full bg-[#111] border border-[#333] p-4 rounded focus:border-[#0070F0] outline-none transition-colors" />
-                        <textarea placeholder="Message" rows="4" className="w-full bg-[#111] border border-[#333] p-4 rounded focus:border-[#0070F0] outline-none transition-colors"></textarea>
-                        <button className="w-full bg-[#0070F0] text-black font-bold py-4 rounded hover:bg-white transition-colors">
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            className="w-full bg-slate-50 dark:bg-[#111] border border-slate-200 dark:border-[#333] p-4 rounded-lg focus:border-[#0070F0] outline-none transition-all focus:ring-1 focus:ring-[#0070F0]/50 text-neutral-800 dark:text-white"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            className="w-full bg-slate-50 dark:bg-[#111] border border-slate-200 dark:border-[#333] p-4 rounded-lg focus:border-[#0070F0] outline-none transition-all focus:ring-1 focus:ring-[#0070F0]/50 text-neutral-800 dark:text-white"
+                        />
+                        <textarea
+                            placeholder="Message"
+                            rows="4"
+                            className="w-full bg-slate-50 dark:bg-[#111] border border-slate-200 dark:border-[#333] p-4 rounded-lg focus:border-[#0070F0] outline-none transition-all focus:ring-1 focus:ring-[#0070F0]/50 text-neutral-800 dark:text-white resize-none"
+                        ></textarea>
+                        <button className="w-full bg-[#0070F0] text-white dark:text-black font-bold py-4 rounded-lg hover:bg-[#0070F0]/90 dark:hover:bg-white transition-all transform active:scale-[0.98] shadow-lg dark:shadow-[0_0_20px_rgba(0,112,240,0.3)] cursor-pointer uppercase tracking-widest text-sm">
                             Send Transmission
                         </button>
                     </form>
                 </div>
             </div>
 
-            <footer className="absolute bottom-8 text-neutral-600 text-xs font-mono">
-                &copy; 2026 VVSPL. STATION TERMINUS.
-            </footer>
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay dark:mix-blend-normal" />
         </section>
     );
 };

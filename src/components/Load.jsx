@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Img from "../assets/logo2.png";
 
 const Load = ({ onComplete }) => {
   const trainRef = useRef(null);
@@ -104,7 +105,8 @@ const Load = ({ onComplete }) => {
             </div>
 
             {/* VVSPL Logo Area - Electric Blue Glow */}
-            <div className="absolute inset-0 flex items-center justify-center pr-12">
+            <div className="absolute inset-0 flex items-center justify-start pr-12">
+              <img src={Img} alt="" className="h-20 w-20" />
               <h1 className="text-[#0070F0] text-6xl font-black italic tracking-tighter drop-shadow-[0_0_15px_rgba(0,112,240,0.9)]">
                 VVSPL
               </h1>
@@ -124,7 +126,7 @@ const Load = ({ onComplete }) => {
         {/* Progress Indicator */}
         <div className="mt-20 flex flex-col items-center z-20">
           <span className="text-[#0070F0]/60 text-xs tracking-[0.4em] uppercase mb-3 animate-pulse font-mono">
-            Establishing Neural Link
+            LOADING...
           </span>
           <div className="w-56 h-[1px] bg-neutral-800 relative">
             {/* The Loading Fill */}
